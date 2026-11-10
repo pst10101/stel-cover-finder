@@ -15,7 +15,7 @@
   {"key":"rang","name":"코가네 랑","short":"랑","unit":"4기 ABYSS","ch":true,"collected":true},
   {"key":"hiyori","name":"하나요 히요리","short":"히요리","unit":"4기 ABYSS","ch":true,"collected":true},
   {"key":"mary","name":"토키노 메리","short":"메리","unit":"4기 ABYSS","ch":true,"collected":true},
-  {"key":"kanna","name":"아이리 칸나","short":"칸나","unit":"졸업","ch":true,"collected":true},
+  {"key":"kanna","name":"아이리 칸나","short":"칸나","unit":"1기","ch":true,"collected":true,"grad":true},
   {"key":"gangzi","name":"강지","short":"강지","unit":"대표","ch":false,"collected":false}
  ],
  "covers": [

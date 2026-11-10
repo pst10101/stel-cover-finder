@@ -90,7 +90,7 @@ async function main() {
 
   const out = {
     updatedAt: cache.updatedAt || null,
-    members: members.map((m) => ({ key: m.key, name: m.name, short: m.short || m.name, unit: m.unit || '', ch: (m.youtube || []).length > 0, collected: collected.has(m.key) })),
+    members: members.map((m) => ({ key: m.key, name: m.name, short: m.short || m.name, unit: m.unit || '', ch: (m.youtube || []).length > 0, collected: collected.has(m.key), ...(m.graduated ? { grad: true } : {}) })),
     covers: covers.map((c) => {
       const o = { id: c.id, d: c.d, t: c.t, m: c.m, k: c.k };
       for (const f of ['o', 'c', 'g', 'x', 'n']) if (c[f]) o[f] = c[f];

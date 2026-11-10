@@ -1,5 +1,5 @@
 {
- "_help": "youtube: 이 멤버의 메인 유튜브 채널 (@핸들 또는 UC로 시작하는 채널 ID, 여러 개 가능). 비워두면 그 멤버 채널은 수집하지 않고, 다른 채널 영상 제목에 이름이 나올 때만 함께 부른 곡으로 잡는다. en: 제목에 영어·일본어 등 다른 표기로 적힐 때의 이름(멤버 찾기·제목 정리에 씀). alias: 제목의 크레딧 자리(\"마시로 cover\", \"Cover by Lize\")에서만 인정하는 다른 이름 — short와 영어 이름 끝 낱말은 자동으로 들어간다. sharedYoutube: 여러 멤버 커버가 올라오는 공용 채널 → 제목에 있는 멤버 이름으로 구분. units: 제목에 \"유니버스 Cover\"처럼 유닛 이름이 크레딧으로 적혔을 때 그 유닛 멤버 전원으로 본다. enabled: false면 수집 안 함.",
+ "_help": "youtube: 이 멤버의 메인 유튜브 채널 (@핸들 또는 UC로 시작하는 채널 ID, 여러 개 가능). 비워두면 그 멤버 채널은 수집하지 않고, 다른 채널 영상 제목에 이름이 나올 때만 함께 부른 곡으로 잡는다. en: 제목에 영어·일본어 등 다른 표기로 적힐 때의 이름(멤버 찾기·제목 정리에 씀). alias: 제목의 크레딧 자리(\"마시로 cover\", \"Cover by Lize\")에서만 인정하는 다른 이름 — short와 영어 이름 끝 낱말은 자동으로 들어간다. sharedYoutube: 여러 멤버 커버가 올라오는 공용 채널 → 제목에 있는 멤버 이름으로 구분. units: 제목에 \"유니버스 Cover\"처럼 유닛 이름이 크레딧으로 적혔을 때 그 유닛 멤버 전원으로 본다. unit: \"1기 EVERYS\"처럼 앞의 \"N기\"로 사이트에서 줄을 나눈다. graduated: true면 졸업 멤버로 표시. enabled: false면 수집 안 함.",
  "members": [
   { "key": "yuni", "name": "아야츠노 유니", "short": "유니", "en": ["Ayatsuno Yuni"], "unit": "1기 EVERYS", "youtube": ["@ayatsunoyuni"] },
   { "key": "huya", "name": "사키하네 후야", "short": "후야", "en": ["Sakihane Huya", "Sakihane Fuya"], "unit": "1기 EVERYS", "youtube": ["UC0YQnenKBCu5sGb7H61n6HA"] },
@@ -15,7 +15,7 @@
   { "key": "rang", "name": "코가네 랑", "short": "랑", "en": ["Kogane Rang", "Cogane Rang"], "unit": "4기 ABYSS", "youtube": ["@coganerang"] },
   { "key": "hiyori", "name": "하나요 히요리", "short": "히요리", "en": ["Hanayo Hiyori"], "unit": "4기 ABYSS", "youtube": ["@hanayohiyori"] },
   { "key": "mary", "name": "토키노 메리", "short": "메리", "en": ["Tokino Mary"], "unit": "4기 ABYSS", "youtube": ["@TokinoMaryChannel"] },
-  { "key": "kanna", "name": "아이리 칸나", "short": "칸나", "en": ["Airi Kanna", "藍璃かんな"], "unit": "졸업", "youtube": ["@airikanna"] },
+  { "key": "kanna", "name": "아이리 칸나", "short": "칸나", "en": ["Airi Kanna", "藍璃かんな"], "unit": "1기", "graduated": true, "youtube": ["@airikanna"] },
   { "key": "gangzi", "name": "강지", "short": "강지", "en": [], "unit": "대표", "youtube": [] }
  ],
  "sharedYoutube": ["@stellive_official"],

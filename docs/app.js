@@ -56,29 +56,34 @@
     } catch (e) { /* 미리보기 화면 등에서는 주소를 못 바꿀 수 있다 */ }
   }
 
-  function chip(label, count, pressed, onClick, todoTip) {
-    var b = el('button', 'chip' + (todoTip ? ' todo' : ''));
+  function chip(label, count, pressed, onClick, tip, todo) {
+    var b = el('button', 'chip' + (todo ? ' todo' : ''));
     b.type = 'button';
     b.setAttribute('aria-pressed', pressed ? 'true' : 'false');
     b.appendChild(document.createTextNode(label));
     if (count != null) b.appendChild(el('span', 'n', String(count)));
-    if (todoTip) b.title = todoTip;
+    if (tip) b.title = tip;
     b.addEventListener('click', onClick);
     return b;
   }
 
-  // 멤버는 기수별로 한 줄씩, 네 칸 격자에 맞춰 놓는다. 기수가 아닌 묶음(졸업·대표)은 "그 외" 한 줄로 모은다.
+  // 멤버는 기수("N기")별로 한 줄씩, 네 칸 격자에 맞춰 놓는다. 기수가 없는 멤버(대표 등)는 마지막 줄에 모은다.
   function memberRows() {
     var rows = [];
-    var etc = { gen: '그 외', name: '', list: [] };
+    var etc = { gen: '', name: '', list: [] };
     members.forEach(function (m) {
       var p = /^(\d+기)\s*(.*)$/.exec(m.unit || '');
       if (!p) { etc.list.push(m); return; }
-      var row = rows.filter(function (r) { return r.key === m.unit; })[0];
-      if (!row) rows.push((row = { key: m.unit, gen: p[1], name: p[2], list: [] }));
+      var row = rows.filter(function (r) { return r.gen === p[1]; })[0];
+      if (!row) rows.push((row = { gen: p[1], name: '', list: [] }));
+      if (!row.name) row.name = p[2];
       row.list.push(m);
     });
-    if (etc.list.length) rows.push(etc);
+    if (etc.list.length) {
+      var same = etc.list.every(function (m) { return m.unit === etc.list[0].unit; });
+      etc.gen = same && etc.list[0].unit ? etc.list[0].unit : '그 외';
+      rows.push(etc);
+    }
     return rows;
   }
 
@@ -92,11 +97,11 @@
       row.appendChild(label);
       u.list.forEach(function (m) {
         var n = covers.filter(function (c) { return c.m.indexOf(m.key) !== -1; }).length;
-        var tip = m.collected ? '' : (m.ch ? '이 멤버 채널은 아직 읽어오지 못했어요. 함께 부른 곡만 나와요.' : '이 멤버 채널은 수집하지 않아요. 함께 부른 곡만 나와요.');
+        var tip = m.collected ? (m.grad ? '졸업 멤버' : '') : (m.ch ? '이 멤버 채널은 아직 읽어오지 못했어요. 함께 부른 곡만 나와요.' : '이 멤버 채널은 수집하지 않아요. 함께 부른 곡만 나와요.');
         row.appendChild(chip(m.short, n, state.member === m.key, function () {
           state.member = state.member === m.key ? '' : m.key;
           update();
-        }, tip));
+        }, tip, !m.collected));
       });
       $members.appendChild(row);
     });
