@@ -290,14 +290,16 @@ export function parseCredits(description) {
 }
 
 // ---- 종류 태그 ----
-// 한 영상에 여러 개가 붙는다: 참여(개인/협동) + 형태(3D 라이브, 쇼츠, 플레이리스트)
-export const TAG_ORDER = ['개인', '협동', '3D 라이브', '쇼츠', '플레이리스트'];
+// 한 영상에 여러 개가 붙는다: 참여(개인/콜라보) + 형태(3D 라이브, 쇼츠, 플레이리스트)
+export const TAG_ORDER = ['개인', '콜라보', '3D 라이브', '쇼츠', '플레이리스트'];
 const RE_3D = /3D\s*(?:LIVE|라이브|cover)/i;
 const RE_PLAYLIST = /플레이리스트|플리(?![가-힣])|playlist|메들리|medley|mash\s*-?\s*up|매시업/i; // 여러 곡이 한 영상에 들어 있는 것
 const RE_LOOP = /반복|loop|\d\s*(?:시간|hours?)/i; // "[1시간 반복]"은 길어도 플레이리스트가 아니다
 
-// curated: curated.json에 적은 k. 배열이면 그 태그만 쓰고, 문자열이면 자동 태그에 더한다(개인/협동은 참여 구분을 바꾼다).
+// curated: curated.json에 적은 k. 배열이면 그 태그만 쓰고, 문자열이면 자동 태그에 더한다(개인/콜라보은 참여 구분을 바꾼다).
 export function coverTags({ title, dur = 0, shorts = false, memberCount = 1, group = '', guest = '', curated }) {
+  const legacy = (k) => (k === '협동' ? '콜라보' : k); // 예전 이름
+  curated = Array.isArray(curated) ? curated.map(legacy) : legacy(curated);
   const sort = (a) => [...new Set(a)].filter((k) => TAG_ORDER.includes(k)).sort((x, y) => TAG_ORDER.indexOf(x) - TAG_ORDER.indexOf(y));
   if (Array.isArray(curated)) return sort(curated);
   const text = title || '';
@@ -305,8 +307,8 @@ export function coverTags({ title, dur = 0, shorts = false, memberCount = 1, gro
   if (RE_3D.test(text)) tags.push('3D 라이브');
   if (dur > 0 && (dur <= 61 || (dur <= 180 && shorts))) tags.push('쇼츠');
   if (RE_PLAYLIST.test(text) || (dur >= 15 * 60 && !RE_LOOP.test(text))) tags.push('플레이리스트');
-  let part = memberCount > 1 || group || guest ? '협동' : '개인';
-  if (curated === '개인' || curated === '협동') part = curated;
+  let part = memberCount > 1 || group || guest ? '콜라보' : '개인';
+  if (curated === '개인' || curated === '콜라보') part = curated;
   else if (curated) tags.push(curated);
   return sort([part, ...tags]);
 }

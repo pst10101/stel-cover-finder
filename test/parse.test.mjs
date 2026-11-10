@@ -82,21 +82,22 @@ assert.deepEqual(parseCredits('■ 원곡 - YOASOBI「怪物」\n【作曲】: A
 assert.deepEqual(parseCredits('Original : ずうっといっしょ！ youtu.be/pdkXabc'), { o: 'ずうっといっしょ！', c: '' });
 assert.deepEqual(parseCredits('오리지널 곡이 아닙니다'), { o: '', c: '' });
 assert.equal(isoDuration('PT1H2M3S'), 3723);
-// 종류 태그: 참여(개인/협동)와 형태(3D 라이브·쇼츠·플레이리스트)가 같이 붙는다
+// 종류 태그: 참여(개인/콜라보)와 형태(3D 라이브·쇼츠·플레이리스트)가 같이 붙는다
 const tags = (o) => coverTags(o).join('+');
 assert.equal(tags({ title: 'x', dur: 240 }), '개인');
 assert.equal(tags({ title: 'x', dur: 35 }), '개인+쇼츠');
 assert.equal(tags({ title: 'x', dur: 150, shorts: true }), '개인+쇼츠');
-assert.equal(tags({ title: 'x', dur: 150, memberCount: 2 }), '협동');
+assert.equal(tags({ title: 'x', dur: 150, memberCount: 2 }), '콜라보');
 assert.equal(tags({ title: '[4K] Dynamite - BTS / 하나코 나나 3D Cover', dur: 200 }), '개인+3D 라이브');
 assert.equal(tags({ title: 'Dynamite - BTS / 하나코 나나 3D Cover #shorts', dur: 19, shorts: true }), '개인+3D 라이브+쇼츠');
-assert.equal(tags({ title: 'x 3D Live Cover', dur: 260, memberCount: 4 }), '협동+3D 라이브');
-assert.equal(tags({ title: 'x', dur: 240, guest: '네코타 츠나' }), '협동');
-assert.equal(tags({ title: '투니버스 메들리', memberCount: 7 }), '협동+플레이리스트');
+assert.equal(tags({ title: 'x 3D Live Cover', dur: 260, memberCount: 4 }), '콜라보+3D 라이브');
+assert.equal(tags({ title: 'x', dur: 240, guest: '네코타 츠나' }), '콜라보');
+assert.equal(tags({ title: '투니버스 메들리', memberCount: 7 }), '콜라보+플레이리스트');
 assert.equal(tags({ title: 'J-POP Mashup!' }), '개인+플레이리스트');
 assert.equal(tags({ title: '여름밤 노래 [Part.1]', dur: 3000 }), '개인+플레이리스트');
 assert.equal(tags({ title: '[1시간 반복] 우사기 랩 (Usagi Rap)', dur: 3593 }), '개인'); // 반복 재생은 플레이리스트가 아니다
 assert.equal(tags({ title: 'x', dur: 40, curated: '3D 라이브' }), '개인+3D 라이브+쇼츠'); // 문자열 하나: 자동 태그에 더한다
 assert.equal(tags({ title: 'x', dur: 240, memberCount: 2, curated: '개인' }), '개인');
-assert.equal(tags({ title: 'x 3D Cover', dur: 40, curated: ['협동', '쇼츠'] }), '협동+쇼츠'); // 배열: 적은 것만
+assert.equal(tags({ title: 'x 3D Cover', dur: 40, curated: ['콜라보', '쇼츠'] }), '콜라보+쇼츠'); // 배열: 적은 것만
+assert.equal(tags({ title: 'x', dur: 240, curated: '협동' }), '콜라보'); // 예전 이름으로 적어도 통한다
 console.log('parse tests ok:', cases.length, 'titles');

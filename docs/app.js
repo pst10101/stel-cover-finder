@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var KIND_ORDER = ['개인', '협동', '3D 라이브', '쇼츠', '플레이리스트'];
+  var KIND_ORDER = ['개인', '콜라보', '3D 라이브', '쇼츠', '플레이리스트'];
   var $q = document.getElementById('q');
   var $sort = document.getElementById('sort');
   var $members = document.getElementById('members');
@@ -41,6 +41,7 @@
       state.q = p.get('q') || '';
       state.member = p.get('m') || '';
       state.kind = p.get('k') || '';
+      if (state.kind === '협동') state.kind = '콜라보'; // 예전 이름으로 공유된 링크
       state.sort = p.get('sort') || 'new';
     } catch (e) { /* 주소를 못 읽는 환경이면 기본값 */ }
   }
@@ -213,7 +214,7 @@
       // 종류 태그는 여러 개일 수 있다 (3D 라이브 + 쇼츠). 다른 태그가 있으면 '개인'은 생략
       var k = el('span', 'k');
       var show = c.k.length > 1 ? c.k.filter(function (name) { return name !== '개인'; }) : c.k;
-      show.forEach(function (name) { k.appendChild(el('span', 'tag' + (name === '협동' ? ' duo' : ''), name)); });
+      show.forEach(function (name) { k.appendChild(el('span', 'tag' + (name === '콜라보' ? ' duo' : ''), name)); });
       li.appendChild(k);
       frag.appendChild(li);
     });
