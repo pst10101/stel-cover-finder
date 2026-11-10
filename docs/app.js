@@ -67,17 +67,29 @@
     return b;
   }
 
+  // 멤버는 기수별로 한 줄씩, 네 칸 격자에 맞춰 놓는다. 기수가 아닌 묶음(졸업·대표)은 "그 외" 한 줄로 모은다.
+  function memberRows() {
+    var rows = [];
+    var etc = { gen: '그 외', name: '', list: [] };
+    members.forEach(function (m) {
+      var p = /^(\d+기)\s*(.*)$/.exec(m.unit || '');
+      if (!p) { etc.list.push(m); return; }
+      var row = rows.filter(function (r) { return r.key === m.unit; })[0];
+      if (!row) rows.push((row = { key: m.unit, gen: p[1], name: p[2], list: [] }));
+      row.list.push(m);
+    });
+    if (etc.list.length) rows.push(etc);
+    return rows;
+  }
+
   function buildFilters() {
     $members.textContent = '';
-    var units = [];
-    members.forEach(function (m) {
-      var u = units.filter(function (x) { return x.name === m.unit; })[0];
-      if (!u) units.push((u = { name: m.unit, list: [] }));
-      u.list.push(m);
-    });
-    units.forEach(function (u) {
+    memberRows().forEach(function (u) {
       var row = el('div', 'unit');
-      row.appendChild(el('span', 'unit-label', u.name));
+      var label = el('span', 'unit-label');
+      label.appendChild(el('span', 'gen', u.gen));
+      if (u.name) label.appendChild(el('span', 'uname', u.name));
+      row.appendChild(label);
       u.list.forEach(function (m) {
         var n = covers.filter(function (c) { return c.m.indexOf(m.key) !== -1; }).length;
         var tip = m.collected ? '' : (m.ch ? '이 멤버 채널은 아직 읽어오지 못했어요. 함께 부른 곡만 나와요.' : '이 멤버 채널은 수집하지 않아요. 함께 부른 곡만 나와요.');
@@ -91,15 +103,17 @@
 
     $kinds.textContent = '';
     $kinds.appendChild(el('span', 'unit-label', '종류'));
-    $kinds.appendChild(chip('전체', null, state.kind === '', function () { state.kind = ''; update(); }));
+    var box = el('div', 'kchips');
+    box.appendChild(chip('전체', null, state.kind === '', function () { state.kind = ''; update(); }));
     KIND_ORDER.forEach(function (k) {
       var n = covers.filter(function (c) { return c.k.indexOf(k) !== -1; }).length;
       if (!n) return;
-      $kinds.appendChild(chip(k, n, state.kind === k, function () {
+      box.appendChild(chip(k, n, state.kind === k, function () {
         state.kind = state.kind === k ? '' : k;
         update();
       }));
     });
+    $kinds.appendChild(box);
   }
 
   function matches(c) {

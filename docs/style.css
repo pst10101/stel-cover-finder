@@ -97,26 +97,58 @@ body {
 button:focus-visible,
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-.filter { display: flex; flex-direction: column; gap: 8px; }
-.unit { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+/* 멤버·종류 필터: 상자 하나 안에 기수별 한 줄, 칩은 네 칸 격자에 맞춰 줄을 세운다 */
+.filters {
+  --label: 6.6rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.members { display: grid; gap: 6px; }
+.members .unit {
+  display: grid;
+  grid-template-columns: var(--label) repeat(4, minmax(0, 7.6rem));
+  gap: 6px;
+  align-items: center;
+}
+.kinds {
+  display: grid;
+  grid-template-columns: var(--label) minmax(0, 1fr);
+  gap: 6px;
+  align-items: start;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+.kinds .unit-label { padding-top: 7px; }
+.kchips { display: flex; flex-wrap: wrap; gap: 6px; }
 .unit-label {
-  flex: 0 0 6.2rem;
   font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--muted);
+  white-space: nowrap;
 }
+.unit-label .uname { margin-left: 5px; font-weight: 500; }
 .chip {
   font: inherit;
   font-size: 0.87rem;
   color: var(--fg);
   background: var(--chip);
   border: 1px solid transparent;
-  border-radius: 999px;
-  padding: 5px 11px;
+  border-radius: 8px;
+  padding: 6px 8px;
   cursor: pointer;
   white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
+.kchips .chip { padding: 6px 11px; }
 .chip .n { color: var(--muted); font-variant-numeric: tabular-nums; margin-left: 4px; font-size: 0.8rem; }
 .chip.todo { background: transparent; border: 1px dashed var(--line); color: var(--muted); }
 .chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
@@ -205,9 +237,20 @@ footer a { color: var(--accent); }
   .row .o small { display: inline; margin-left: 6px; }
   .row .m { grid-area: 3 / 1; font-size: 0.87rem; }
   .row .d { grid-area: 3 / 2; justify-self: end; font-size: 0.8rem; }
-  /* 휴대폰: 멤버 칩을 한 줄로 이어 붙여서 목록이 빨리 보이게 */
-  .filter { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px; }
-  .filter .unit { display: contents; }
-  .unit-label { flex-basis: auto; }
-  .filter .unit-label { margin-left: 2px; }
+  /* 휴대폰: 기수 이름은 "1기"처럼 짧게만 보이고, 칩 네 칸이 화면 너비를 나눠 쓴다 */
+  .filters { --label: 2.3rem; padding: 10px; }
+  .members .unit { grid-template-columns: var(--label) repeat(4, minmax(0, 1fr)); gap: 5px; }
+  .unit-label .uname { display: none; }
+  .chip { padding: 6px 2px; }
+  .chip .n { margin-left: 3px; }
+  .kchips { gap: 5px; }
+  .kchips .chip { padding: 6px 9px; }
+}
+
+/* 좁은 휴대폰: 칩 글자를 조금 줄여서 "마시로 36" 같은 긴 칩이 잘리지 않게 */
+@media (max-width: 380px) {
+  .filters { --label: 2rem; padding: 10px 8px; }
+  .members .unit { gap: 4px; }
+  .members .chip { font-size: 0.8rem; padding: 6px 1px; }
+  .members .chip .n { font-size: 0.7rem; margin-left: 2px; }
 }
