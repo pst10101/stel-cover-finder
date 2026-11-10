@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>스텔라이브 커버곡 총정리</title>
+  <meta name="description" content="스텔라이브 멤버 커버곡을 곡명·원곡자·멤버·날짜로 찾아보는 비공식 팬사이트">
+  <meta name="theme-color" content="#F2F3FA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F1124" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234A3FD0'/%3E%3Cpath d='M13 22.5V9.5l10-2v12' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='10.5' cy='22.5' r='3' fill='%23fff'/%3E%3Ccircle cx='20.5' cy='19.5' r='3' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>스텔라이브 <span>커버곡</span> 총정리</h1>
+    <p class="lede">곡명·원곡자·멤버·날짜로 커버곡을 찾아보는 비공식 팬 페이지예요. 곡명을 누르면 유튜브로 이동해요.</p>
+    <p class="updated" id="updated"></p>
+    <p class="status" id="status" hidden></p>
+  </header>
+
+  <section class="controls" aria-label="검색과 필터">
+    <div class="searchrow">
+      <input id="q" type="search" placeholder="곡명, 원곡자, 멤버로 검색" autocomplete="off" enterkeyhint="search" aria-label="검색어">
+      <select id="sort" aria-label="정렬">
+        <option value="new">최신순</option>
+        <option value="old">오래된순</option>
+        <option value="title">곡명순</option>
+        <option value="orig">원곡자순</option>
+      </select>
+    </div>
+    <div class="filter" id="members" role="group" aria-label="멤버"></div>
+    <div class="unit" id="kinds" role="group" aria-label="종류"></div>
+  </section>
+
+  <main>
+    <p class="count" id="count" aria-live="polite">커버곡 목록을 불러오는 중…</p>
+    <ul class="list" id="list"></ul>
+  </main>
+
+  <footer>
+    <p>팬이 만든 비공식 사이트예요. 스텔라이브, YouTube와 관계없어요.</p>
+    <p>멤버 유튜브 채널의 공개 정보(제목·공개일)를 YouTube Data API로 모으고, 영상은 저장하지 않고 원본으로 연결해요.</p>
+    <p>곡명·원곡자는 영상 제목에서 자동으로 뽑거나 손으로 다듬은 것이라 틀릴 수 있어요. 원곡자 칸이 비어 있으면 아직 확인하지 못한 곡이에요.</p>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

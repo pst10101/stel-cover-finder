@@ -1,0 +1,104 @@
+# 커버곡 목록 자동 갱신 → docs 폴더를 GitHub Pages로 배포
+# (저장소 변수 USE_GITHUB_PAGES 가 true 일 때만 배포 단계가 돈다)
+name: update
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'   # 6시간마다 새로 올라온 영상만 확인 (UTC 기준)
+    - cron: '51 19 * * 0'    # 매주 월요일 04:51 (한국 시간) 전체 새로고침
+  workflow_dispatch:
+    inputs:
+      full:
+        description: '전체 다시 수집'
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ['docs/**', 'scripts/**', 'members.json', 'curated.json']
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: data-commit
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      # 대기열에서 기다렸다 도는 실행도 "지금" 최신 main에서 시작해야 앞 실행이 올린 데이터와 안 부딪힘
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: 수집 방식 정하기
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "fetch=no" >> "$GITHUB_OUTPUT"
+          else
+            echo "fetch=yes" >> "$GITHUB_OUTPUT"
+          fi
+          if [ "${{ inputs.full }}" = "true" ] || [ "${{ github.event.schedule }}" = "51 19 * * 0" ]; then
+            echo "flag=--full" >> "$GITHUB_OUTPUT"
+          else
+            echo "flag=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 제목 파서 테스트
+        run: node test/parse.test.mjs
+
+      - name: 유튜브 커버곡 수집
+        if: steps.mode.outputs.fetch == 'yes'
+        continue-on-error: true
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/fetch-youtube.mjs ${{ steps.mode.outputs.flag }}
+
+      - name: 사이트 데이터 만들기
+        run: node scripts/build.mjs
+
+      - name: 바뀐 데이터 저장
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data docs/data
+          if git diff --cached --quiet; then
+            echo "바뀐 데이터 없음"
+            exit 0
+          fi
+          git commit -m "data: 커버곡 목록 갱신"
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          exit 1
+
+      # ---- GitHub Pages로 배포할 때만 (저장소 변수 USE_GITHUB_PAGES = true) ----
+      - if: vars.USE_GITHUB_PAGES == 'true'
+        uses: actions/configure-pages@v5
+
+      - if: vars.USE_GITHUB_PAGES == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: update
+    if: vars.USE_GITHUB_PAGES == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
