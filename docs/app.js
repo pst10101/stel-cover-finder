@@ -93,7 +93,7 @@
     $kinds.appendChild(el('span', 'unit-label', '종류'));
     $kinds.appendChild(chip('전체', null, state.kind === '', function () { state.kind = ''; update(); }));
     KIND_ORDER.forEach(function (k) {
-      var n = covers.filter(function (c) { return c.k === k; }).length;
+      var n = covers.filter(function (c) { return c.k.indexOf(k) !== -1; }).length;
       if (!n) return;
       $kinds.appendChild(chip(k, n, state.kind === k, function () {
         state.kind = state.kind === k ? '' : k;
@@ -104,7 +104,7 @@
 
   function matches(c) {
     if (state.member && c.m.indexOf(state.member) === -1) return false;
-    if (state.kind && c.k !== state.kind) return false;
+    if (state.kind && c.k.indexOf(state.kind) === -1) return false;
     if (!state.q) return true;
     var terms = state.q.toLowerCase().split(/\s+/).filter(Boolean);
     return terms.every(function (t) { return c._hay.indexOf(t) !== -1 || c._tight.indexOf(t) !== -1; });
@@ -191,8 +191,10 @@
       if (c.c && c.c !== c.o) o.appendChild(el('small', null, '작곡 ' + c.c));
       li.appendChild(o);
       li.appendChild(el('span', 'm', who(c)));
+      // 종류 태그는 여러 개일 수 있다 (3D 라이브 + 쇼츠). 다른 태그가 있으면 '개인'은 생략
       var k = el('span', 'k');
-      k.appendChild(el('span', 'tag' + (c.k === '협동' ? ' duo' : ''), c.k));
+      var show = c.k.length > 1 ? c.k.filter(function (name) { return name !== '개인'; }) : c.k;
+      show.forEach(function (name) { k.appendChild(el('span', 'tag' + (name === '협동' ? ' duo' : ''), name)); });
       li.appendChild(k);
       frag.appendChild(li);
     });
@@ -233,8 +235,9 @@
     members.forEach(function (m) { byKey[m.key] = m; });
     covers = data.covers || [];
     covers.forEach(function (c) {
+      if (!Array.isArray(c.k)) c.k = [c.k || '개인'];
       var names = c.m.map(function (k) { return byKey[k] ? byKey[k].name + ' ' + byKey[k].short : ''; }).join(' ');
-      var hay = [c.t, c.o, c.c, names, c.g, c.x, c.n, c.k, c.d, c.yt].filter(Boolean).join(' ').toLowerCase();
+      var hay = [c.t, c.o, c.c, names, c.g, c.x, c.n, c.k.join(' '), c.d, c.yt].filter(Boolean).join(' ').toLowerCase();
       c._hay = hay;
       c._tight = hay.replace(/\s+/g, '');
     });

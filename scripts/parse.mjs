@@ -289,11 +289,24 @@ export function parseCredits(description) {
   return { o, c };
 }
 
-// ---- 종류 ----
-export function coverKind({ title, dur, shorts, memberCount, group }) {
-  if (/3D\s*(?:LIVE|라이브|cover)/i.test(title || '')) return '3D 라이브';
-  if (dur > 0 && (dur <= 61 || (dur <= 180 && shorts))) return '쇼츠';
-  if (dur >= 15 * 60) return '플레이리스트';
-  if (memberCount > 1 || group) return '협동';
-  return '개인';
+// ---- 종류 태그 ----
+// 한 영상에 여러 개가 붙는다: 참여(개인/협동) + 형태(3D 라이브, 쇼츠, 플레이리스트)
+export const TAG_ORDER = ['개인', '협동', '3D 라이브', '쇼츠', '플레이리스트'];
+const RE_3D = /3D\s*(?:LIVE|라이브|cover)/i;
+const RE_PLAYLIST = /플레이리스트|플리(?![가-힣])|playlist|메들리|medley|mash\s*-?\s*up|매시업/i; // 여러 곡이 한 영상에 들어 있는 것
+const RE_LOOP = /반복|loop|\d\s*(?:시간|hours?)/i; // "[1시간 반복]"은 길어도 플레이리스트가 아니다
+
+// curated: curated.json에 적은 k. 배열이면 그 태그만 쓰고, 문자열이면 자동 태그에 더한다(개인/협동은 참여 구분을 바꾼다).
+export function coverTags({ title, dur = 0, shorts = false, memberCount = 1, group = '', guest = '', curated }) {
+  const sort = (a) => [...new Set(a)].filter((k) => TAG_ORDER.includes(k)).sort((x, y) => TAG_ORDER.indexOf(x) - TAG_ORDER.indexOf(y));
+  if (Array.isArray(curated)) return sort(curated);
+  const text = title || '';
+  const tags = [];
+  if (RE_3D.test(text)) tags.push('3D 라이브');
+  if (dur > 0 && (dur <= 61 || (dur <= 180 && shorts))) tags.push('쇼츠');
+  if (RE_PLAYLIST.test(text) || (dur >= 15 * 60 && !RE_LOOP.test(text))) tags.push('플레이리스트');
+  let part = memberCount > 1 || group || guest ? '협동' : '개인';
+  if (curated === '개인' || curated === '협동') part = curated;
+  else if (curated) tags.push(curated);
+  return sort([part, ...tags]);
 }

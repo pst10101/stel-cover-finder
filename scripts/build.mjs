@@ -4,7 +4,7 @@
 // 우선순위: curated.json에 적은 값 > 제목·설명에서 자동으로 뽑은 값.
 // curated.json에만 있고 아직 수집되지 않은 영상도 그대로 사이트에 나온다.
 import { path, readJSON, writeJSON, kstDate, log } from './lib.mjs';
-import { memberMatchers, readTitle, coverKind, cleanText, cleanCredit, looksLikeCover } from './parse.mjs';
+import { memberMatchers, readTitle, coverTags, cleanText, cleanCredit, looksLikeCover } from './parse.mjs';
 
 const norm = (s) => String(s || '').replace(/\s+/g, '').toLowerCase();
 const dayNum = (d) => Date.parse(d + 'T00:00:00Z') / 86400e3;
@@ -42,7 +42,7 @@ async function main() {
         g,
         x: cur.x || (cur.t ? '' : parsed.x) || '', // 손으로 정리한 곡에는 자동으로 뽑은 참여자를 붙이지 않는다
         n: cur.n || '',
-        k: cur.k || coverKind({ title, dur: v.dur, shorts: v.shorts, memberCount: m.length, group: g }),
+        kin: { title: title + ' ' + (cur.t || ''), dur: v.dur, shorts: v.shorts, curated: cur.k }, // 종류 태그는 맨 끝에서 한꺼번에 정한다
         yt: title,
         auto: !cur.t, // 곡명을 자동으로 뽑았는지 (사이트에서 원래 제목을 같이 보여줌)
       });
@@ -54,7 +54,7 @@ async function main() {
     if (byId.has(id) || cur.hide || !cur.t || !cur.d) continue;
     byId.set(id, {
       id, d: cur.d, t: cur.t, o: cur.o || '', c: cur.c || '', m: sortKeys(cur.m || []),
-      g: cur.g || '', x: cur.x || '', n: cur.n || '', k: cur.k || '개인', yt: '', auto: false,
+      g: cur.g || '', x: cur.x || '', n: cur.n || '', kin: { title: cur.t, curated: cur.k }, yt: '', auto: false,
     });
   }
 
@@ -71,14 +71,15 @@ async function main() {
       c.t = e.t;
       c.o = e.o || c.o;
       c.m = sortKeys([...e.m, ...c.m]);
-      if (e.k && e.k !== '개인') c.k = e.k;
-      else if (c.k === '개인' && c.m.length > 1) c.k = '협동';
+      c.kin.title += ' ' + e.t;
+      if (e.k && e.k !== '개인') c.kin.curated = e.k;
       c.auto = false;
     } else if (hits.length === 0) {
-      covers.push({ id: '', d: e.d, t: e.t, o: e.o || '', c: '', m: sortKeys(e.m), g: e.g || '', x: e.x || '', n: e.n || '', k: e.k || '개인', yt: '', auto: false });
+      covers.push({ id: '', d: e.d, t: e.t, o: e.o || '', c: '', m: sortKeys(e.m), g: e.g || '', x: e.x || '', n: e.n || '', kin: { title: e.t, curated: e.k }, yt: '', auto: false });
     } // 여러 개가 걸리면 어느 영상인지 알 수 없으니 자동 수집된 것만 둔다
   }
 
+  for (const c of covers) c.k = coverTags({ ...c.kin, memberCount: c.m.length, group: c.g, guest: c.x });
   covers.sort((a, b) => (a.d < b.d ? 1 : a.d > b.d ? -1 : a.t.localeCompare(b.t, 'ko')));
 
   // 채널을 실제로 읽어온 멤버 (아니면 사이트에서 "함께 부른 곡만 나와요"로 표시)
