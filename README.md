@@ -2,7 +2,7 @@
 
 스텔라이브 멤버 커버곡을 **곡명 · 원곡자 · 멤버 · 날짜**로 찾아보는 비공식 팬사이트예요.
 
-👉 **https://pst10101.github.io/stel-cover-finder**
+👉 **https://stelcover.sbk-dev.com**
 
 ## 이런 걸 할 수 있어요
 
