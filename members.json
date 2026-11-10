@@ -15,7 +15,7 @@
   { "key": "rang", "name": "코가네 랑", "short": "랑", "en": ["Kogane Rang", "Cogane Rang"], "unit": "4기 ABYSS", "youtube": ["@coganerang"] },
   { "key": "hiyori", "name": "하나요 히요리", "short": "히요리", "en": ["Hanayo Hiyori"], "unit": "4기 ABYSS", "youtube": ["@hanayohiyori"] },
   { "key": "mary", "name": "토키노 메리", "short": "메리", "en": ["Tokino Mary"], "unit": "4기 ABYSS", "youtube": ["@TokinoMaryChannel"] },
-  { "key": "kanna", "name": "아이리 칸나", "short": "칸나", "en": ["Airi Kanna"], "unit": "졸업", "youtube": [] },
+  { "key": "kanna", "name": "아이리 칸나", "short": "칸나", "en": ["Airi Kanna"], "unit": "졸업", "youtube": ["@airikanna"] },
   { "key": "gangzi", "name": "강지", "short": "강지", "en": [], "unit": "대표", "youtube": [] }
  ],
  "sharedYoutube": ["@stellive_official"],
