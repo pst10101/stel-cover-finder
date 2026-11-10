@@ -42,6 +42,10 @@ const cases = [
   ['타상연화『打上花火』[DAOKO × 요네즈켄시] | 시라유키 히나 x 아오쿠모 린 Cover 스', '타상연화『打上花火』[DAOKO × 요네즈켄시]', '', ['hina', 'rin']],
   ['HELP!! - Kobo Kanaeru 유즈하 리코 COVER #vtuber #리코 #스텔라이브', 'HELP!!', 'Kobo Kanaeru', ['riko']],
   ['KING (Kanaria) / 텐코 시부키 x 아오쿠모 린 (Tenko Shibuki x Aokumo Rin) Cover', 'KING (Kanaria)', '', ['shibuki', 'rin']],
+  // 일본어로 적힌 멤버 이름
+  ['怪獣の花唄 (Vaundy) / 藍璃かんな Cover', '怪獣の花唄 (Vaundy)', '', ['kanna']],
+  ['空奏列車 (Orangestar) Coverㅣ 藍璃かんな x VESPERBELL ヨミ', '空奏列車 (Orangestar)', '', ['kanna'], '', 'VESPERBELL ヨミ'],
+  ['ラプンツェル(Rapunzel) / 白雪ひな Cover', 'ラプンツェル(Rapunzel)', '', ['hina']],
   // 따옴표 안이 곡명
   ["감정을 담아 '만찬가'를 불러보았다", '만찬가', '', []],
   ["에이토의 '향수' 잔잔하게 불러보았다 #shorts #vtuber", '향수', '', []],
