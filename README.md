@@ -22,7 +22,7 @@
 
 ## 처음 설정
 
-1. 저장소 **Settings → Secrets and variables → Actions → Secrets**에 `YOUTUBE_API_KEY` 추가 (YouTube Data API v3 키)
+1. 저장소 **Settings → Secrets and variables → Actions → Secrets**에 `YOUTUBE_API_KEY` 추가 (YouTube Data API v3 키. `YTAPI`라는 이름으로 넣어도 인식해요)
 2. 같은 화면 **Variables**에 `USE_GITHUB_PAGES` = `true` 추가, **Settings → Pages → Source**를 **GitHub Actions**로
 3. **Actions → update → Run workflow** 한 번 실행 (처음에는 채널 전체를 훑어요)
 
