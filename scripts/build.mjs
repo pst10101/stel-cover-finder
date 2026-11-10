@@ -4,7 +4,7 @@
 // 우선순위: curated.json에 적은 값 > 제목·설명에서 자동으로 뽑은 값.
 // curated.json에만 있고 아직 수집되지 않은 영상도 그대로 사이트에 나온다.
 import { path, readJSON, writeJSON, kstDate, log } from './lib.mjs';
-import { memberMatchers, mentions, parseCoverTitle, coverKind } from './parse.mjs';
+import { memberMatchers, readTitle, coverKind, cleanText, cleanCredit, looksLikeCover } from './parse.mjs';
 
 const norm = (s) => String(s || '').replace(/\s+/g, '').toLowerCase();
 const dayNum = (d) => Date.parse(d + 'T00:00:00Z') / 86400e3;
@@ -16,7 +16,7 @@ async function main() {
   const order = new Map(members.map((m, i) => [m.key, i]));
   const cache = await readJSON(path('data', 'youtube.json'), { updatedAt: null, channels: {} });
   const curated = await readJSON(path('curated.json'), { videos: {}, noVideo: [] });
-  const matchers = memberMatchers(members);
+  const matchers = memberMatchers(members, cfg.units || []);
   const sortKeys = (keys) => uniq(keys).filter((k) => order.has(k)).sort((a, b) => order.get(a) - order.get(b));
 
   const byId = new Map();
@@ -26,21 +26,24 @@ async function main() {
     for (const v of slot.videos || []) {
       const cur = curated.videos?.[v.id] || {};
       if (cur.hide) continue;
-      const parsed = parseCoverTitle(v.title, matchers);
-      const m = sortKeys(cur.m || [v.m, ...mentions(v.title, matchers)].filter(Boolean));
-      const g = cur.g || (!m.length ? '스텔라이브' : '');
+      const title = cleanText(v.title);
+      // 손으로 넣은 영상이 아니면, 수집 기준이 바뀌었을 때 예전에 모아 둔 것도 다시 걸러낸다
+      if (!cur.t && !looksLikeCover(title)) continue;
+      const parsed = readTitle(title, matchers);
+      const m = sortKeys(cur.m || [v.m, ...parsed.m].filter(Boolean));
+      const g = cur.g || parsed.g || (!m.length ? '스텔라이브' : '');
       byId.set(v.id, {
         id: v.id,
         d: kstDate(v.pub),
-        t: cur.t || parsed.t || v.title,
-        o: cur.o || parsed.o || v.o || '',
-        c: cur.c || v.c || '',
+        t: cur.t || parsed.t || title,
+        o: cur.o || parsed.o || cleanCredit(v.o || ''),
+        c: cur.c || cleanCredit(v.c || ''),
         m,
         g,
-        x: cur.x || '',
+        x: cur.x || (cur.t ? '' : parsed.x) || '', // 손으로 정리한 곡에는 자동으로 뽑은 참여자를 붙이지 않는다
         n: cur.n || '',
-        k: cur.k || coverKind({ title: v.title, dur: v.dur, shorts: v.shorts, memberCount: m.length, group: g }),
-        yt: v.title,
+        k: cur.k || coverKind({ title, dur: v.dur, shorts: v.shorts, memberCount: m.length, group: g }),
+        yt: title,
         auto: !cur.t, // 곡명을 자동으로 뽑았는지 (사이트에서 원래 제목을 같이 보여줌)
       });
     }

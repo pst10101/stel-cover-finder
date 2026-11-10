@@ -6,7 +6,7 @@
 // 키가 없으면 아무것도 안 하고 넘어간다. (그때는 curated.json의 손으로 모은 목록만 사이트에 나옴)
 // YouTube API 정책상 저장한 데이터는 주기적으로 새로 받아야 해서, 워크플로가 매주 --full을 돌린다.
 import { path, readJSON, writeJSON, getJSON, HttpError, redact, log } from './lib.mjs';
-import { isoDuration, looksLikeCover, parseCredits } from './parse.mjs';
+import { isoDuration, looksLikeCover, parseCredits, cleanText } from './parse.mjs';
 
 const KEY = process.env.YOUTUBE_API_KEY;
 const API = process.env.YOUTUBE_API_BASE || 'https://www.googleapis.com/youtube/v3';
@@ -88,7 +88,7 @@ function toEntry(v, member, channelId) {
     id: v.id,
     ch: channelId,
     m: member, // 채널 주인 (공용 채널이면 null)
-    title: v.snippet.title,
+    title: cleanText(v.snippet.title),
     pub: Date.parse(v.snippet.publishedAt),
     dur: isoDuration(v.contentDetails?.duration),
   };
