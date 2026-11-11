@@ -1,8 +1,9 @@
 {
- "updatedAt": 1794353693021,
+ "updatedAt": 1794379769443,
  "channels": {
   "@ayatsunoyuni": {
    "videos": [
+    {"id":"dR6Qwbyi4hY","ch":"UClbYIn9LDbbFZ9w2shX3K0g","m":"yuni","title":"(허락 안 받고 몰래 올리는) 모르시나요 cover 🎶 #유니 #스텔라이브 #STELLIVE","pub":1794375013000,"dur":57},
     {"id":"kNzGpNEdBqw","ch":"UClbYIn9LDbbFZ9w2shX3K0g","m":"yuni","title":"오버라이드 「オーバーライド / 吉田夜世」 - 아야츠노 유니 Cover","pub":1791536409000,"dur":139},
     {"id":"bRa_zAaaCCE","ch":"UClbYIn9LDbbFZ9w2shX3K0g","m":"yuni","title":"오네가이 달링 「おねがいダーリン」 (ONE - ナナホシ管弦楽団) - 아야츠노 유니 Cover","pub":1779366607000,"dur":195},
     {"id":"vPFzWl54pt0","ch":"UClbYIn9LDbbFZ9w2shX3K0g","m":"yuni","title":"참생활 「真生活」 (KAKASHI) - 아야츠노 유니 Cover","pub":1766655006000,"dur":243},
@@ -21,6 +22,7 @@
     {"id":"UKzvG2SP5wg","ch":"UClbYIn9LDbbFZ9w2shX3K0g","m":"yuni","title":"【아야츠노 유니】 긍지높은 아이돌 誇り高きアイドル | 한국어Cover","pub":1672812907000,"dur":256}
    ],
    "seen": [
+    "dR6Qwbyi4hY",
     "XDfm2L-VdBw",
     "Kj4Y2W4QoeA",
     "nlTC61ISQA8",
@@ -319,8 +321,7 @@
     "8LFrAlSzyBM",
     "JWkyWiwPoYI",
     "4vXK69VIOnU",
-    "G0IWvbzoMJI",
-    "8gvISMTrOGg"
+    "G0IWvbzoMJI"
    ],
    "id": "UClbYIn9LDbbFZ9w2shX3K0g",
    "title": "아야츠노 유니 AYATSUNO YUNI",
@@ -1720,6 +1721,7 @@
     {"id":"naWmFCbwi3M","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"괴물 (怪物) / 아카네 리제 Cover","pub":1686290409000,"dur":209,"o":"YOASOBI「怪物」"}
    ],
    "seen": [
+    "AOyB08bZHbY",
     "ql9U1PR9xNQ",
     "yef9r3wupm0",
     "wPNjEn3Wv0Y",
@@ -2018,8 +2020,7 @@
     "s_KyHlcSvRY",
     "PLdYCPF4fVM",
     "SIBtVNjRois",
-    "M4MXqDv9210",
-    "Yr2KVvFURrc"
+    "M4MXqDv9210"
    ],
    "id": "UC7-m6jQLinZQWIbwm9W-1iw",
    "title": "아카네 리제 AKANE LIZE",
@@ -2835,6 +2836,7 @@
     {"id":"lfxl4YlY0lE","ch":"UCj0c1jUr91dTetIQP2pFeLA","m":"riko","title":"용사(YOASOBI) / 유즈하 리코(Yuzuha Riko) cover","pub":1715936407000,"dur":196}
    ],
    "seen": [
+    "AWSbwWcoESc",
     "3U1_9HKUf14",
     "nK5N2VDV8O0",
     "TM-uVDKQxhg",
@@ -3133,8 +3135,7 @@
     "6L8zP73l8SQ",
     "C2hq4Qvtm5g",
     "_BPKG-xpP0E",
-    "xJlfrbS5NK4",
-    "IMFhzYJEEew"
+    "xJlfrbS5NK4"
    ],
    "id": "UCj0c1jUr91dTetIQP2pFeLA",
    "title": "유즈하 리코 YUZUHA RIKO",
