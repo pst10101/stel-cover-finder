@@ -1,5 +1,5 @@
 {
- "updatedAt": 1794769137989,
+ "updatedAt": 1794785539823,
  "channels": {
   "@ayatsunoyuni": {
    "videos": [
@@ -18,7 +18,7 @@
     {"id":"ZL5m1EDh-z8","ch":"UClbYIn9LDbbFZ9w2shX3K0g","m":"yuni","title":"아이돌 (YOASOBI) / 아야츠노 유니 Cover","pub":1689411611000,"dur":215},
     {"id":"ZokeGI54Kqo","ch":"UClbYIn9LDbbFZ9w2shX3K0g","m":"yuni","title":"【아야츠노 유니】 굿바이 선언 | Cover","pub":1684575009000,"dur":176,"o":"chinozo"},
     {"id":"yXemOzx8Cw8","ch":"UClbYIn9LDbbFZ9w2shX3K0g","m":"yuni","title":"【아야츠노 유니】 사랑의 말 Ⅳ | Cover","pub":1676361611000,"dur":219,"o":"DECO*27 / 合言葉Ⅳ"},
-    {"id":"YJJbVAPTZLg","ch":"UClbYIn9LDbbFZ9w2shX3K0g","m":"yuni","title":"【아야츠노 유니】 베텔기우스 | Cover","pub":1674896406000,"dur":238,"o":"優里『ベテルギウス』 ( )"},
+    {"id":"YJJbVAPTZLg","ch":"UClbYIn9LDbbFZ9w2shX3K0g","m":"yuni","title":"【아야츠노 유니】 베텔기우스 | Cover","pub":1674896406000,"dur":238,"o":"優里『ベテルギウス』"},
     {"id":"UKzvG2SP5wg","ch":"UClbYIn9LDbbFZ9w2shX3K0g","m":"yuni","title":"【아야츠노 유니】 긍지높은 아이돌 誇り高きアイドル | 한국어Cover","pub":1672812907000,"dur":256}
    ],
    "seen": [
@@ -334,7 +334,6 @@
     {"id":"8shKFjkHabo","ch":"UC0YQnenKBCu5sGb7H61n6HA","m":"huya","title":"푸른 산호초(青い珊瑚礁) - 松田 聖子 l 사키하네 후야(Sakihane Huya) Cover","pub":1788172806000,"dur":220},
     {"id":"VITNdv2ZywY","ch":"UC0YQnenKBCu5sGb7H61n6HA","m":"huya","title":"Booo! - TOKOTOKO l 사키하네 후야(Sakihane Huya) Cover","pub":1783423806000,"dur":176},
     {"id":"-RrbCkl3YJo","ch":"UC0YQnenKBCu5sGb7H61n6HA","m":"huya","title":"Melt CPK! Remix (初音ミク ver.) [ryo (supercell)] l 사키하네 후야(Sakihane Huya) Cover","pub":1777543206000,"dur":271},
-    {"id":"_RLWjE8Y0oU","ch":"UC0YQnenKBCu5sGb7H61n6HA","m":"huya","title":"커버곡 많관부!","pub":1775168101000,"dur":19},
     {"id":"Xo1Q-RPAk2c","ch":"UC0YQnenKBCu5sGb7H61n6HA","m":"huya","title":"푸른 하늘의 랩소디 [青空のラプソディ/ 코바야시네 메이드래곤 OP] l 사키하네 후야(Sakihane Huya) Cover","pub":1774864806000,"dur":278},
     {"id":"Sj51pWOnW1o","ch":"UC0YQnenKBCu5sGb7H61n6HA","m":"huya","title":"CHEWING LUV [아야츠노 유니] l 사키하네 후야(Sakihane Huya) Cover","pub":1771061406000,"dur":181},
     {"id":"eeIMg68ug9Y","ch":"UC0YQnenKBCu5sGb7H61n6HA","m":"huya","title":"별자리가 될 수 있다면 (星座になれたら) l 사키하네 후야(Sakihane Huya) Cover","pub":1758279606000,"dur":259}
@@ -658,7 +657,7 @@
     {"id":"mdPLl3he6A0","ch":"UCAHVQ44O81aehLWfy9O6Elw","m":"tabi","title":"[4K] LADY (요네즈 켄시)ㅣ아라하시 타비(Arahashi Tabi) 「Live Cover」","pub":1771403433000,"dur":216},
     {"id":"X4nHbp5Rm08","ch":"UCAHVQ44O81aehLWfy9O6Elw","m":"tabi","title":"한 페이지가 될 수 있게 [DAY6]ㅣ아라하시 타비X네코타 츠나 「COVER」","pub":1771059546000,"dur":210},
     {"id":"e2Jn_8JWtNw","ch":"UCAHVQ44O81aehLWfy9O6Elw","m":"tabi","title":"Number one rockstar [다영 DAYOUNG] - 아라하시 타비 Cover","pub":1766653146000,"dur":174},
-    {"id":"1rPwUSi_1SA","ch":"UCAHVQ44O81aehLWfy9O6Elw","m":"tabi","title":"SODA POP [Saja Boys] - 아라하시 타비 Cover","pub":1758969846000,"dur":151},
+    {"id":"1rPwUSi_1SA","ch":"UCAHVQ44O81aehLWfy9O6Elw","m":"tabi","title":"SODA POP [Saja Boys] - 아라하시 타비 Cover","pub":1758969846000,"dur":151},
     {"id":"-uRxUMJ-exw","ch":"UCAHVQ44O81aehLWfy9O6Elw","m":"tabi","title":"Healer [DAY6] ㅣ아라하시 타비(Arahashi Tabi) 「COVER」","pub":1757246346000,"dur":228},
     {"id":"1HCo6-YL9AY","ch":"UCAHVQ44O81aehLWfy9O6Elw","m":"tabi","title":"Ref:rain - Aimerㅣ아라하시 타비(Arahashi Tabi) 「COVER」","pub":1756216746000,"dur":290},
     {"id":"3qRN6mQJ4K4","ch":"UCAHVQ44O81aehLWfy9O6Elw","m":"tabi","title":"야화(Night Flower)ㅣ아라하시 타비 x 하나코 나나 「COVER」","pub":1749979746000,"dur":265},
@@ -1696,7 +1695,7 @@
     {"id":"aH8Io8klASU","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"JANE DOE (Kenshi Yonezu, Hikaru Utada) ㅣ아카네 리제(Akane Lize) 【COVER】","pub":1761215406000,"dur":236},
     {"id":"O8p_SsnHGhM","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"[4K] 가면무도회ㅣ아카네 리제(Akane Lize) Live Cover","pub":1760778029000,"dur":244},
     {"id":"SIBtVNjRois","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"Bunny Girl (AKASAKI)ㅣ아카네 리제(Akane Lize) 【COVER】","pub":1759320006000,"dur":218},
-    {"id":"icR-Tg7YZwY","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"프로포즈(プロポーズ)ㅣ아카네 리제(Akane Lize) 【COVER】","pub":1758973806000,"dur":241},
+    {"id":"icR-Tg7YZwY","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"프로포즈(プロポーズ)ㅣ아카네 리제(Akane Lize) 【COVER】","pub":1758973806000,"dur":241},
     {"id":"q2uHl6EJh-k","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"Surges (Orangestar)ㅣ아카네 리제(Akane Lize) 【COVER】","pub":1758370806000,"dur":147},
     {"id":"AXfEu8_-d-k","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"シャンティ(SHANTI) [wotaku]ㅣ아카네 리제(Akane Lize) 【COVER】","pub":1756626306000,"dur":171},
     {"id":"Wbzf3YE_pfI","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"Golden - HUNTR/X (KPop Demon Hunters)ㅣCover by Lize x Rin x Nana #golden #shorts","pub":1754121635000,"dur":60,"shorts":true},
@@ -1705,14 +1704,14 @@
     {"id":"xDsvYAnq324","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"뱀파이어 (ヴァンパイア)ㅣ아카네 리제(Akane Lize) 【COVER】","pub":1749645006000,"dur":182},
     {"id":"f3bB5GgEZxw","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"벚꽃, 너, 그리고 나(サクラキミワタシ)ㅣ아카네 리제(Akane Lize) 【COVER】","pub":1741518006000,"dur":204},
     {"id":"fTqvR0U0EC4","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"내일의 밤하늘 초계반(アスノヨゾラ哨戒班)ㅣ아카네 리제(Akane Lize) 【COVER】","pub":1738666807000,"dur":183},
-    {"id":"lqU0yh_u7Qo","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"APT. (ROSÉ & Bruno Mars)ㅣ아카네 리제(Akane Lize) x 아오쿠모 린(Aokumo Rin) Cover","pub":1733045406000,"dur":173},
+    {"id":"lqU0yh_u7Qo","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"APT. (ROSÉ & Bruno Mars)ㅣ아카네 리제(Akane Lize) x 아오쿠모 린(Aokumo Rin) Cover","pub":1733045406000,"dur":173},
     {"id":"DrZMMirj4zo","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"끝나지 않은 노래ㅣ아카네 리제(Akane Lize) 【COVER】","pub":1729576686000,"dur":252},
     {"id":"7zsY6Ex9dMI","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"밀월 Un・Deux・Trois (蜜月アン・ドゥ・トロワ)ㅣ아카네 리제(Akane Lize) 【COVER】","pub":1727783947000,"dur":256},
     {"id":"OzncrMNY7cw","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"Viva La Vida (Coldplay)ㅣ아카네 리제(Akane Lize) 【Arrange COVER】","pub":1725102008000,"dur":219},
     {"id":"CyOAmEihVHs","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"Drowning (WOODZ)ㅣ아카네 리제 (Akane Lize) 【Cover】","pub":1721472007000,"dur":252},
     {"id":"ZMgLAy-VKe4","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"Melt (メルト)  ㅣ아카네 리제 【Cover】","pub":1719745807000,"dur":259,"o":"メルト(MELT) －ryo (supercell)"},
     {"id":"pKPPV1RMk-c","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"프라이드 혁명 (プライド革命) / 아카네 리제 Cover","pub":1718110807000,"dur":238},
-    {"id":"yCVZq40vqLk","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"괴수의 꽃노래 (怪獣の花唄) / 아카네 리제 Cover","pub":1714816807000,"dur":229,"o":"• 怪獣の花唄 / Vaundy"},
+    {"id":"yCVZq40vqLk","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"괴수의 꽃노래 (怪獣の花唄) / 아카네 리제 Cover","pub":1714816807000,"dur":229,"o":"• 怪獣の花唄 / Vaundy"},
     {"id":"t6EzltrzGNo","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"선잠 (Leina) / 아카네 리제 Cover","pub":1709375409000,"dur":183,"o":"Leina 『うたたね』"},
     {"id":"d_YvT_ULGkc","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"절정찬가 (絶頂讃歌) / Akane Lize (Cover)","pub":1708165807000,"dur":184},
     {"id":"cOLX5n5q4yc","ch":"UC7-m6jQLinZQWIbwm9W-1iw","m":"lize","title":"雪解け (tayori) / Akane Lize Cover","pub":1707037208000,"dur":244},
@@ -2048,7 +2047,6 @@
     {"id":"Nmkp68aUw1o","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"카가리비토 [カガリビト - millstones] / 아오쿠모 린(Aokumo Rin) Cover","pub":1769247906000,"dur":309},
     {"id":"jyU6GkzD2CA","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"사신 (요네즈 켄시) / 아오쿠모 린(Aokumo Rin) Cover","pub":1767088806000,"dur":182},
     {"id":"zHbh6KO1dFo","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"All I Want For Christmas Is You (Kinyopio Ver.) / 아오쿠모 린(Aokumo Rin) Cover","pub":1766588407000,"dur":133},
-    {"id":"xFCMW4cCAmk","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"2025년 쿠리미들의 린 커버곡 픽은?✨️ #shorts #cover","pub":1766131275000,"dur":57,"shorts":true},
     {"id":"KSCTkOn5Niw","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"STAY (The Kid LAROI, Justin Bieber) / 아오쿠모 린(Aokumo Rin) Cover","pub":1762853406000,"dur":142},
     {"id":"tKKyDS5lJkA","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"[4K] 벌거벗은 용사 (裸の勇者) / 아오쿠모 린(Aokumo Rin) Cover","pub":1762765282000,"dur":207},
     {"id":"v8uHfZ1jLWo","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"[4K] 스위트 매직 (スイートマジック) / 아오쿠모 린(Aokumo Rin) Cover","pub":1762678881000,"dur":217},
@@ -2076,10 +2074,10 @@
     {"id":"vCHNh5E4eDU","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"SPECIALZ(King Gnu) / 아오쿠모 린(Aokumo Rin) Cover","pub":1735984806000,"dur":235},
     {"id":"J3uDS9deLZo","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"🎶💙 #shorts #vtuber #cover","pub":1735549217000,"dur":70,"shorts":true},
     {"id":"ebnM6X6B1Yg","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"ハッピーエンド (back number) / 아오쿠모 린(Aokumo Rin) Cover","pub":1734607806000,"dur":322},
-    {"id":"WWuUOLOHB1s","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"ずうっといっしょ！💙 #shorts #vtuber #cover","pub":1732953631000,"dur":20,"o":"youtu.be/pdkXf2Ztunk?si=99lobvGjznpfuQ2_","shorts":true},
+    {"id":"WWuUOLOHB1s","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"ずうっといっしょ！💙 #shorts #vtuber #cover","pub":1732953631000,"dur":20,"shorts":true},
     {"id":"pM8_wnJ7JsE","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"Overdose (なとり) / 아오쿠모 린 (Aokumo Rin) Cover","pub":1731841206000,"dur":193},
     {"id":"-yY4Ijb06zg","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"アイデンティティ(아이덴티티) - 아오쿠모 린 x 텐코 시부키 (Aokumo Rin x Tenko Shibuki) Cover","pub":1729936806000,"dur":159},
-    {"id":"LWRGR35e5Mk","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"SUPERPOWER (cover) #SUPERPOWER #VALORANT","pub":1729681232000,"dur":33,"o":"youtu.be/DX4BE9GmpH4?si=3QrmNLdTqDF2al3t"},
+    {"id":"LWRGR35e5Mk","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"SUPERPOWER (cover) #SUPERPOWER #VALORANT","pub":1729681232000,"dur":33},
     {"id":"-a6y64hn4DA","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"사랑 감기에 실려 (Vaundy) / 아오쿠모 린(Aokumo Rin) Cover","pub":1728738006000,"dur":266},
     {"id":"O1MqvWf7q58","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"무희 (Vaundy) / 아오쿠모 린(Aokumo Rin) Cover","pub":1726390807000,"dur":230},
     {"id":"U_7d-cwPspY","ch":"UCQmcltnre6aG9SkDRYZqFIg","m":"rin","title":"네 기꺼이 (cover) #네기꺼이 #기리기리댄스","pub":1725526824000,"dur":20},
@@ -2781,8 +2779,6 @@
     {"id":"fLLX2R-RwVE","ch":"UCj0c1jUr91dTetIQP2pFeLA","m":"riko","title":"숨바꼭질 [ かくれんぼㅣAliA ] / 유즈하 리코 Yuzuha Riko cover","pub":1776088806000,"dur":300},
     {"id":"cWnykOC5b_c","ch":"UCj0c1jUr91dTetIQP2pFeLA","m":"riko","title":"phony [포니 / ツミキ] / 유즈하 리코 Yuzuha Riko cover","pub":1774515606000,"dur":190},
     {"id":"lBtlpVXmbYY","ch":"UCj0c1jUr91dTetIQP2pFeLA","m":"riko","title":"밤을 달리다 夜に駆ける - YOASOBI / 유즈하 리코 Yuzuha Riko cover","pub":1769320806000,"dur":260},
-    {"id":"HAaWx7eQqJ8","ch":"UCj0c1jUr91dTetIQP2pFeLA","m":"riko","title":"리코가 커버한 노래 중 최고는? #vtuber #shorts #스텔라이브 #리코","pub":1768802415000,"dur":55,"shorts":true},
-    {"id":"lMPWLCd7hlw","ch":"UCj0c1jUr91dTetIQP2pFeLA","m":"riko","title":"최근 화제의 곡을 커버한 스트리머 #vtuber #shorts #스텔라이브 #리코 #용사툰","pub":1767247255000,"dur":27,"shorts":true},
     {"id":"qao2gYtY7bs","ch":"UCj0c1jUr91dTetIQP2pFeLA","m":"riko","title":"히로인 (back number - ヒロイン) / 유즈하 리코 (Yuzuha Riko) cover","pub":1766653728000,"dur":279},
     {"id":"eYaX9aDtlmA","ch":"UCj0c1jUr91dTetIQP2pFeLA","m":"riko","title":"목마름을 외치다 (美波 - カワキヲアメク) / 유즈하 리코 (Yuzuha Riko) cover","pub":1764238506000,"dur":254},
     {"id":"Ip25Jhh5zU0","ch":"UCj0c1jUr91dTetIQP2pFeLA","m":"riko","title":"IRIS OUT (요네즈 켄시) / 유즈하 리코(Yuzuha Riko) cover","pub":1762690651000,"dur":148},
@@ -2839,7 +2835,6 @@
    "seen": [
     "JPREvwQroko",
     "SYhnPn_osvk",
-    "v08w-4J1D1E",
     "AWSbwWcoESc",
     "3U1_9HKUf14",
     "nK5N2VDV8O0",
@@ -3136,7 +3131,8 @@
     "x7VnP5sAZiQ",
     "F8VlYc5mlio",
     "45csmFVp3FI",
-    "6L8zP73l8SQ"
+    "6L8zP73l8SQ",
+    "C2hq4Qvtm5g"
    ],
    "id": "UCj0c1jUr91dTetIQP2pFeLA",
    "title": "유즈하 리코 YUZUHA RIKO",
@@ -3147,7 +3143,6 @@
    "videos": [
     {"id":"3Xf1Wt7Z-RY","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"혁명도중 [革命道中 / アイナ・ジ・エンド] / 텐코 시부키 (Tenko Shibuki) cover","pub":1792492206000,"dur":197},
     {"id":"zQp6ZZAT6ew","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"mosi mosi? (楽音 / 사사네)  / 텐코 시부키(Tenko Shibuki) cover","pub":1788349507000,"dur":164},
-    {"id":"smy_LZQKlng","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"'아빠' 라고 불러봤더니 생긴 일","pub":1783675816000,"dur":945},
     {"id":"AH8sMk7otKU","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"친애하는 소년이여 (拝啓、少年よ / Hump Back)  / 텐코 시부키 (Tenko Shibuki) cover","pub":1782721806000,"dur":189},
     {"id":"2Vbktv5zLgc","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"[4K] 호시아이(ホシアイ) / 텐코 시부키 3D Live Cover","pub":1781330408000,"dur":285},
     {"id":"zxVe7IxFbgU","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"[4K] StaRt (Mrs. GREEN APPLE )/ 텐코 시부키 3D Live Cover","pub":1780995633000,"dur":222},
@@ -3157,7 +3152,6 @@
     {"id":"MiDetUXu1hw","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"[4K] 숨바꼭질 [ かくれんぼㅣAliA ] / 텐코 시부키 3D Live Cover","pub":1779868823000,"dur":306},
     {"id":"xwuVYaJYERo","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"나에게 꽃다발 [わたしに花束 - Ado] / 텐코 시부키(Tenko Shibuki) cover","pub":1779107406000,"dur":228},
     {"id":"yA25-F9SJh0","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"행복에 대해 내가 생각한 것 『幸せについて、僕が考えたこと』 / 텐코 시부키(Tenko Shibuki) cover","pub":1774099207000,"dur":222},
-    {"id":"coIrQy7COxY","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"부키 커버 모음! 붘플리🎶💜  #shorts #vtuber #cover","pub":1771060065000,"dur":57,"shorts":true},
     {"id":"vD5g9qVz4zg","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"ラブレター (YOASOBI) / 텐코 시부키(Tenko Shibuki) cover","pub":1771057806000,"dur":219},
     {"id":"I8hFyN32Ysk","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"DAYBREAK FRONTLINE / 텐코 시부키(Tenko Shibuki) cover","pub":1769846406000,"dur":199},
     {"id":"30dd8K_i-38","ch":"UCYxLMfeX1CbMBll9MsGlzmw","m":"shibuki","title":"메리크리(メリクリ) BoA / 텐코 시부키(Tenko Shibuki) cover","pub":1766655926000,"dur":217},
